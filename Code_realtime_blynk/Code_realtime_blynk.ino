@@ -7,9 +7,9 @@ Servo myservo;
 #define led 2
 
 //Deklarasi Blynk
-#define BLYNK_TEMPLATE_ID "TMPL631L-yVKA"
-#define BLYNK_TEMPLATE_NAME "IoTFishFeeder"
-#define BLYNK_AUTH_TOKEN "M98Ct_eQp95rqcQuCVm07P_lYfXeW0d5"
+#define BLYNK_TEMPLATE_ID "TMPL6xDXxX_fu"
+#define BLYNK_TEMPLATE_NAME "DisplayPakanIkanOtomatis"
+#define BLYNK_AUTH_TOKEN "HS1opHxlsEFe3xTzFjvEI8Prnvfwgtfx"
 #include <BlynkSimpleESP32.h>
 
 //Deklarasi WiFi
@@ -64,14 +64,13 @@ void loop(){
   Blynk.run();
   if(start == 1)
   {
-    makan();
     digitalWrite(led, HIGH);
+    makan();
     delay(1000);
-    while(true);
   }
 }
 
-BLYNK_WRITE(V1)
+BLYNK_WRITE(V0)
 {
   start = param.asInt();
 }
